@@ -2,19 +2,25 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto11
+      java: corretto8
   pre_build:
     commands:
-      - cd src/main/resources/static
-      - npm install bower -g
-      - bower install --allow-root
-      - cd $CODEBUILD_SRC_DIR
+  #    - cd src/main/resources/static
+ #     - npm install bower -g
+  #    - bower install --allow-root
+       - pwd 
+       - ls -lrta
+       - cd $CODEBUILD_SRC_DIR
+       - pwd 
+       - ls -lrta
   build:
     commands:
       - echo Build started on `date`
   post_build:
     commands:
       - echo Build completed on `date`
+      - pwd 
+      - ls -lrta
       - mvn package
 artifacts:
   files:
