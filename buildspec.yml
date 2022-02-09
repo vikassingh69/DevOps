@@ -26,5 +26,5 @@ phases:
 artifacts:
   files:
     - target/softobiz-1.0.0.war
-    - **/*
+    - '**/*'
   
