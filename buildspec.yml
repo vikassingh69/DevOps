@@ -1,9 +1,8 @@
 version: 0.2 
 phases:
   install:
-    runtime-versions:
-      maven:maven 
-      java:jdk-8
+    runtime-versions: 
+      java: jdk-8
   pre_build:
     commands:
   #    - cd src/main/resources/static
