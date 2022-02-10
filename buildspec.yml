@@ -23,7 +23,6 @@ phases:
       - ls -lrta
       #- mvn clean package
       - mvn clean 
-      - ls-lrta
 artifacts:
   files:
     - target/softobiz-1.0.0.war
