@@ -1,0 +1,26 @@
+version: 0.2 
+phases:
+  install:
+    runtime-versions:
+      java : corretto8
+  pre_build:
+    commands:
+      - echo "pre-build started"
+      - pwd
+      - ls -lrta
+      - cd $CODEBUILD_SRC_DIR
+      - pwd
+      - ls -lrta
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn package
+      - ls -lrta
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - target/softobiz-1.0.0.war
+    # - '**/*'
+    
