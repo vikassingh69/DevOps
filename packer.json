@@ -37,11 +37,7 @@
         {
             "type": "shell",
             "inline": [
-                "cd /opt/",
-                "git clone https://github.com/keshavkummari/keshavkummari.git",
-                "cd /opt/keshavkummari/",
-                "cp -pvr /opt/keshavkummari/ /var/www/html/"
-
+                "cd /opt/"
             ]
         }
 
