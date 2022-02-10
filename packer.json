@@ -2,17 +2,17 @@
     "variables":{
         "applicaiton_name": "softobiz",
         "application_version": "1.0.0",
-        "region": "us-east-1",
+        "region": "ap-south-1",
         "instance_type": "t2.micro",
-        "source_ami": "ami-04505e74c0741db8d",
-        "ami_aws_account_id": "156779398815"
+        "source_ami": "0851b76e8b1bce90b",
+        "ami_aws_account_id": "707587404585"
 
     },
     "builders": [
         {
             "name": "{{ user `applicaiton_name` }}",
             "type": "amazon-ebs",
-            "profile": "devops",
+            "profile": "vikas_singh",
             "ssh_username": "ubuntu",
             "force_deregister": "true",
             "force_delete_snapshot": "true",
