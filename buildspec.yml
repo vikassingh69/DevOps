@@ -16,7 +16,7 @@ phases:
       - echo Build started on `date`
       - mvn clean
       #- mvn package 
-      - mvn deploy
+      #- mvn deploy
       - ls -lrta
   post_build:
     commands:
