@@ -1,0 +1,45 @@
+{
+    "variables":{
+        "applicaiton_name": "softobiz",
+        "application_version": "1.0.0",
+        "region": "ap-south-1",
+        "instance_type": "t2.micro",
+        "source_ami": "ami-0851b76e8b1bce90b",
+        "ami_aws_account_id": "707587404585"
+
+    },
+    "builders": [
+        {
+            "name": "{{ user `applicaiton_name` }}",
+            "type": "amazon-ebs",
+            "profile": "vikas_singh",
+            "ssh_username": "ubuntu",
+            "force_deregister": "true",
+            "force_delete_snapshot": "true",
+            "associate_public_ip_address": "true",
+            "region": "{{ user  `region` }}",
+            "source_ami": "{{ user `source_ami` }}",
+            "instance_type":  "{{ user `instance_type` }}",
+            "ami_name": "{{ user `applicaiton_name` }}-{{ user `application_version` }}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "sudo apt update",
+                "sudo apt install software-properties-common -y",
+                "sudo apt install git curl wget -y",
+                "sudo apt-add-repository ppa:ansible/ansible",
+                "sudo apt install ansible -y"
+            ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "cd /opt/"
+            ]
+        }
+
+    ]
+}
