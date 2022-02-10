@@ -29,7 +29,7 @@
             "inline": [
                 "sudo apt update",
                 "sudo apt install software-properties-common -y",
-                "sudo apt install git curl wget unzip -y",
+                "sudo apt install git curl wget -y",
                 "sudo apt-add-repository ppa:ansible/ansible",
                 "sudo apt install ansible -y"
             ]
