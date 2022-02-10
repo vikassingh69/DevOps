@@ -3,6 +3,6 @@ variable "cloudbinary-app_version" {
 }
 
 variable "cloudbinary_ami_account" {
-    default = "156988153838737373"
+    default = "707587404585"
   
 }
