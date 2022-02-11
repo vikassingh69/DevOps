@@ -1,0 +1,9 @@
+---
+- name: TimeZone
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Set Timezone 
+      timezone:
+        name: Asia/Kolkata
+...
