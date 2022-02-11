@@ -4,7 +4,7 @@
         "application_version": "1.0.0",
         "region": "ap-south-1",
         "instance_type": "t2.micro",
-        "source_ami": "ami-08ee6644906ff4d6c",
+        "source_ami": "ami-0c6615d1e95c98aca",
         "ami_aws_account_id": "707587404585"
 
     },
@@ -28,11 +28,14 @@
             "type": "shell",
             "inline": [
                 "sudo apt update",
-                "sudo apt install apache2 -y",
-                "sudo apt install software-properties-common -y",
-                "sudo apt install git curl wget unzip -y",
-                "sudo apt-add-repository ppa:ansible/ansible",
-                "sudo apt install ansible -y"
+                "sudo yum install epel-release -y",
+                "sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",       
+                "sudo yum update -y",
+                "sudo yum install -y httpd httpd-tools mod_ssl",
+                "sudo systemctl enable httpd",
+                "sudo systemctl start httpd"
+
+
             ]
         },
         {
